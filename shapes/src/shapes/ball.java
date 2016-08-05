@@ -10,6 +10,7 @@ public class ball extends PApplet{
 	float y;
 	PApplet p;
 	ball ball1;
+	boolean game_in_prog = true;
 	
 	public ball(PApplet np, float tempX, float tempY, float tempvx, float tempvy) {
 		p = np;
@@ -31,7 +32,7 @@ public class ball extends PApplet{
 			 if (y < 0 || y == 370 && x > p.mouseX && x < (p.mouseX + 55)) {
 				 yspeed = -yspeed;
 			 }
-			 else if (y > 400) {
+			 else if (y > 400 && game_in_prog) {
 				 p.text("GameOver", 175,200);
 			 }
 			 if (x > 400 || x < 0) {
